@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\Brick.cs" />
+    <Compile Include="Assets\Scripts\DeathZone.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Paddle.cs" />
   </ItemGroup>
