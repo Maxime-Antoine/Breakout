@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject brickPrefab;
     public GameObject paddle;
     public GameObject deathParticules;
-    public GameObject clonePaddle;
+
+    private GameObject clonePaddle;
 
     public static GameManager instance = null;
 
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
 
-        Setup();
+        SetupPaddle();
 	}
 	
     public void LoseLife()
@@ -44,10 +45,9 @@ public class GameManager : MonoBehaviour
         CheckGameOver();
     }
 
-    private void Setup()
+    private void SetupPaddle()
     {
         clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity) as GameObject;
-        Instantiate(brickPrefab, transform.position, Quaternion.identity);
     }
 
     private void CheckGameOver()
@@ -71,10 +71,5 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    private void SetupPaddle()
-    {
-        clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity);
     }
 }
