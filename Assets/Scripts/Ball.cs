@@ -4,13 +4,13 @@ public class Ball : MonoBehaviour {
 
     public float initialVelocity = 600f;
 
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     private bool ballInPlay = false;
 
 	// Use this for initialization
 	void Awake ()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -20,8 +20,8 @@ public class Ball : MonoBehaviour {
         {
             transform.parent = null;
             ballInPlay = true;
-            rigidbody.isKinematic = false;
-            rigidbody.AddForce(new Vector3(initialVelocity, initialVelocity, 0));
+            rb.isKinematic = false;
+            rb.AddForce(new Vector3(initialVelocity, initialVelocity, 0));
         }
-	}
+    }
 }
